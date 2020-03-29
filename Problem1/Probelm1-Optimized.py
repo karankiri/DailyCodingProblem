@@ -2,10 +2,12 @@ import unittest
 
 def TwoNumbersEqual(list, value):
   is_sum_exist = False
-  for i in range(len(list)):
-    for j in range(len(list)):
-      if(list[i] + list[j] == value and i != j):
-        is_sum_exist = True
+  hashSet = set()
+  for item in list:
+    if value-item in hashSet:
+      is_sum_exist = True
+    hashSet.add(item)
+    
   return is_sum_exist
 
 
